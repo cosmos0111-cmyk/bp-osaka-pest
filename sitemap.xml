@@ -2,9 +2,15 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://nonhyeonnight.xyz/</loc>
-    <lastmod>2026-06-10</lastmod>
+    <lastmod>2026-06-11</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
+  </url>
+  <url>
+    <loc>https://nonhyeonnight.xyz/posts/checklist-003-1sugx1a.html</loc>
+    <lastmod>2026-06-11</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
   </url>
   <url>
     <loc>https://nonhyeonnight.xyz/posts/compare-001-1h6zo4h.html</loc>
@@ -15,6 +21,12 @@
   <url>
     <loc>https://nonhyeonnight.xyz/posts/compare-001-1sn336e.html</loc>
     <lastmod>2026-06-10</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://nonhyeonnight.xyz/posts/compare-002-1qjt68d.html</loc>
+    <lastmod>2026-06-11</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
   </url>
@@ -45,6 +57,12 @@
   <url>
     <loc>https://nonhyeonnight.xyz/posts/guide-003.html</loc>
     <lastmod>2026-06-05</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://nonhyeonnight.xyz/posts/qa-001-1pe69vk.html</loc>
+    <lastmod>2026-06-11</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
   </url>
@@ -80,7 +98,7 @@
   </url>
   <url>
     <loc>https://nonhyeonnight.xyz/feed.xml</loc>
-    <lastmod>2026-06-10</lastmod>
+    <lastmod>2026-06-11</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
