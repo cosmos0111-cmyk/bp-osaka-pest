@@ -2,3 +2,4 @@ User-agent: *
 Allow: /
 
 Sitemap: https://blog.nonhyeonnight.xyz/sitemap.xml
+Sitemap: https://blog.nonhyeonnight.xyz/sitemap-pages.xml
