@@ -1,597 +1,595 @@
 <!DOCTYPE html>
 <html lang="ko">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="bpaas-design-system" content="brutalist-avantgarde">
-    <meta name="bpaas-design-theme" content="kr-night-signal">
-    <title>공덕 클럽 추천정보: 야간 교통망 관점의 허브 분석</title>
-    <meta name="description" content="공덕 지역의 교통 및 공간 구조를 기반으로 한 클럽 선택 기준을 제시합니다. 동선 최적화, 음향 설비 기준, 구역별 진입 경로 분석 정보를 제공합니다.">
-    <meta name="keywords" content="공덕 클럽 추천정보, 공덕 야간 허브, 마포구 클럽 분석, 공덕 동선 가이드">
-    <link rel="canonical" href="https://blog.nonhyeonnight.xyz/about.html">
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="https://blog.nonhyeonnight.xyz/about.html">
-    <meta property="og:title" content="공덕 클럽 추천정보: 야간 교통망 관점의 허브 분석">
-    <meta property="og:description" content="공덕 지역의 교통 및 공간 구조를 기반으로 한 클럽 선택 기준을 제시합니다. 동선 최적화, 음향 설비 기준, 구역별 진입 경로 분석 정보를 제공합니다.">
-    <style>
-        :root {
-            --bg-color: #050507;
-            --surface-color: #0f1015;
-            --border-color: #ffffff;
-            --text-primary: #ffffff;
-            --text-secondary: #a0a5b5;
-            --signal-green: #00ff66;
-            --signal-red: #ff3333;
-            --signal-yellow: #ffea00;
-            --grid-line: rgba(255, 255, 255, 0.1);
-            --font-mono: 'Courier New', Courier, monospace, 'Pretendard';
-        }
+ <meta charset="UTF-8">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>공덕 클럽 추천정보: 야간 교통망 관점의 허브 분석</title>
+ <meta name="description" content="공덕 지역의 교통 및 공간 구조를 기반으로 한 클럽 선택 기준을 제시합니다. 동선 최적화, 음향 설비 기준, 구역별 진입 경로 분석 정보를 제공합니다.">
+ <meta name="keywords" content="공덕 클럽 추천정보, 공덕 야간 허브, 마포구 클럽 분석, 공덕 동선 가이드">
+ <link rel="canonical" href="https://blog.nonhyeonnight.xyz/about.html">
+ <meta property="og:type" content="website">
+ <meta property="og:url" content="https://blog.nonhyeonnight.xyz/about.html">
+ <meta property="og:title" content="공덕 클럽 추천정보: 야간 교통망 관점의 허브 분석">
+ <meta property="og:description" content="공덕 지역의 교통 및 공간 구조를 기반으로 한 클럽 선택 기준을 제시합니다. 동선 최적화, 음향 설비 기준, 구역별 진입 경로 분석 정보를 제공합니다.">
+ <style>
+ :root {
+ --bg-color: #050507;
+ --surface-color: #0f1015;
+ --border-color: #ffffff;
+ --text-primary: #ffffff;
+ --text-secondary: #a0a5b5;
+ --signal-green: #00ff66;
+ --signal-red: #ff3333;
+ --signal-yellow: #ffea00;
+ --grid-line: rgba(255, 255, 255, 0.1);
+ --font-mono: 'Courier New', Courier, monospace, 'Pretendard';
+ }
 
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-        }
+ * {
+ box-sizing: border-box;
+ margin: 0;
+ padding: 0;
+ }
 
-        html, body {
-            background-color: var(--bg-color);
-            color: var(--text-primary);
-            font-family: var(--font-mono);
-            line-height: 1.6;
-            overflow-x: hidden;
-        }
+ html, body {
+ background-color: var(--bg-color);
+ color: var(--text-primary);
+ font-family: var(--font-mono);
+ line-height: 1.6;
+ overflow-x: hidden;
+ }
 
-        body::before {
-            content: "";
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-image: 
-                linear-gradient(to right, var(--grid-line) 1px, transparent 1px),
-                linear-gradient(to bottom, var(--grid-line) 1px, transparent 1px);
-            background-size: 40px 40px;
-            z-index: -1;
-            pointer-events: none;
-        }
+ body::before {
+ content: "";
+ position: fixed;
+ top: 0;
+ left: 0;
+ width: 100%;
+ height: 100%;
+ background-image: 
+ linear-gradient(to right, var(--grid-line) 1px, transparent 1px),
+ linear-gradient(to bottom, var(--grid-line) 1px, transparent 1px);
+ background-size: 40px 40px;
+ z-index: -1;
+ pointer-events: none;
+ }
 
-        /* Navigation */
-        nav {
-            border-bottom: 4px solid var(--border-color);
-            background: var(--surface-color);
-            position: sticky;
-            top: 0;
-            z-index: 100;
-            padding: 15px 20px;
-        }
+ /* Navigation */
+ nav {
+ border-bottom: 4px solid var(--border-color);
+ background: var(--surface-color);
+ position: sticky;
+ top: 0;
+ z-index: 100;
+ padding: 15px 20px;
+ }
 
-        .nav-container {
-            max-width: 1200px;
-            margin: 0 auto;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
+ .nav-container {
+ max-width: 1200px;
+ margin: 0 auto;
+ display: flex;
+ justify-content: space-between;
+ align-items: center;
+ }
 
-        .nav-logo {
-            font-size: 1.5rem;
-            font-weight: 900;
-            text-transform: uppercase;
-            letter-spacing: -1px;
-            color: var(--signal-green);
-            text-decoration: none;
-            border: 2px solid var(--signal-green);
-            padding: 5px 10px;
-        }
+ .nav-logo {
+ font-size: 1.5rem;
+ font-weight: 900;
+ text-transform: uppercase;
+ letter-spacing: -1px;
+ color: var(--signal-green);
+ text-decoration: none;
+ border: 2px solid var(--signal-green);
+ padding: 5px 10px;
+ }
 
-        .nav-links {
-            display: flex;
-            gap: 20px;
-        }
+ .nav-links {
+ display: flex;
+ gap: 20px;
+ }
 
-        .nav-links a {
-            color: var(--text-primary);
-            text-decoration: none;
-            font-weight: bold;
-            font-size: 0.9rem;
-            text-transform: uppercase;
-            padding: 5px 10px;
-            transition: all 0.2s ease;
-        }
+ .nav-links a {
+ color: var(--text-primary);
+ text-decoration: none;
+ font-weight: bold;
+ font-size: 0.9rem;
+ text-transform: uppercase;
+ padding: 5px 10px;
+ transition: all 0.2s ease;
+ }
 
-        .nav-links a:hover {
-            background: var(--text-primary);
-            color: var(--bg-color);
-        }
+ .nav-links a:hover {
+ background: var(--text-primary);
+ color: var(--bg-color);
+ }
 
-        /* Hero Section */
-        .v-hero-jg77 {
-            border-bottom: 4px solid var(--border-color);
-            padding: 100px 20px 60px 20px;
-            background: linear-gradient(180deg, #000000 0%, var(--surface-color) 100%);
-            position: relative;
-        }
+ /* Hero Section */
+ .v-hero-jg77 {
+ border-bottom: 4px solid var(--border-color);
+ padding: 100px 20px 60px 20px;
+ background: linear-gradient(180deg, #000000 0%, var(--surface-color) 100%);
+ position: relative;
+ }
 
-        .v-hero-inner {
-            max-width: 1200px;
-            margin: 0 auto;
-        }
+ .v-hero-inner {
+ max-width: 1200px;
+ margin: 0 auto;
+ }
 
-        .v-hero-badge {
-            display: inline-block;
-            background: var(--signal-red);
-            color: #000;
-            font-weight: 900;
-            padding: 4px 12px;
-            font-size: 0.85rem;
-            margin-bottom: 20px;
-            text-transform: uppercase;
-            border: 1px solid var(--border-color);
-        }
+ .v-hero-badge {
+ display: inline-block;
+ background: var(--signal-red);
+ color: #000;
+ font-weight: 900;
+ padding: 4px 12px;
+ font-size: 0.85rem;
+ margin-bottom: 20px;
+ text-transform: uppercase;
+ border: 1px solid var(--border-color);
+ }
 
-        .v-hero-jg77 h1 {
-            font-size: clamp(2.5rem, 6vw, 4.5rem);
-            line-height: 1.1;
-            font-weight: 900;
-            text-transform: uppercase;
-            letter-spacing: -2px;
-            margin-bottom: 20px;
-            word-break: keep-all;
-        }
+ .v-hero-jg77 h1 {
+ font-size: clamp(2.5rem, 6vw, 4.5rem);
+ line-height: 1.1;
+ font-weight: 900;
+ text-transform: uppercase;
+ letter-spacing: -2px;
+ margin-bottom: 20px;
+ word-break: keep-all;
+ }
 
-        .v-hero-jg77 h1 span {
-            color: var(--signal-green);
-            display: block;
-        }
+ .v-hero-jg77 h1 span {
+ color: var(--signal-green);
+ display: block;
+ }
 
-        .v-hero-desc {
-            font-size: 1.2rem;
-            color: var(--text-secondary);
-            max-width: 800px;
-            border-left: 4px solid var(--signal-green);
-            padding-left: 20px;
-            margin-top: 30px;
-        }
+ .v-hero-desc {
+ font-size: 1.2rem;
+ color: var(--text-secondary);
+ max-width: 800px;
+ border-left: 4px solid var(--signal-green);
+ padding-left: 20px;
+ margin-top: 30px;
+ }
 
-        /* Main Layout Wrapper */
-        .r-main-ra3l {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 60px 20px;
-        }
+ /* Main Layout Wrapper */
+ .r-main-ra3l {
+ max-width: 1200px;
+ margin: 0 auto;
+ padding: 60px 20px;
+ }
 
-        /* Section Title Style */
-        .section-header {
-            border-bottom: 4px solid var(--border-color);
-            padding-bottom: 15px;
-            margin-bottom: 40px;
-            display: flex;
-            justify-content: space-between;
-            align-items: flex-end;
-        }
+ /* Section Title Style */
+ .section-header {
+ border-bottom: 4px solid var(--border-color);
+ padding-bottom: 15px;
+ margin-bottom: 40px;
+ display: flex;
+ justify-content: space-between;
+ align-items: flex-end;
+ }
 
-        .section-header h2 {
-            font-size: 2rem;
-            text-transform: uppercase;
-            font-weight: 800;
-        }
+ .section-header h2 {
+ font-size: 2rem;
+ text-transform: uppercase;
+ font-weight: 800;
+ }
 
-        .section-header .signal-dot {
-            width: 15px;
-            height: 15px;
-            background-color: var(--signal-yellow);
-            display: inline-block;
-        }
+ .section-header .signal-dot {
+ width: 15px;
+ height: 15px;
+ background-color: var(--signal-yellow);
+ display: inline-block;
+ }
 
-        /* Grid Layout */
-        .x-grid-ni9g {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-            gap: 30px;
-            margin-bottom: 80px;
-        }
+ /* Grid Layout */
+ .x-grid-ni9g {
+ display: grid;
+ grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+ gap: 30px;
+ margin-bottom: 80px;
+ }
 
-        .grid-card {
-            background: var(--surface-color);
-            border: 3px solid var(--border-color);
-            padding: 30px;
-            position: relative;
-            transition: transform 0.2s ease;
-        }
+ .grid-card {
+ background: var(--surface-color);
+ border: 3px solid var(--border-color);
+ padding: 30px;
+ position: relative;
+ transition: transform 0.2s ease;
+ }
 
-        .grid-card:hover {
-            transform: translate(-5px, -5px);
-            box-shadow: 8px 8px 0px var(--signal-green);
-        }
+ .grid-card:hover {
+ transform: translate(-5px, -5px);
+ box-shadow: 8px 8px 0px var(--signal-green);
+ }
 
-        .card-num {
-            position: absolute;
-            top: 20px;
-            right: 20px;
-            font-size: 1.5rem;
-            font-weight: 900;
-            color: rgba(255, 255, 255, 0.15);
-        }
+ .card-num {
+ position: absolute;
+ top: 20px;
+ right: 20px;
+ font-size: 1.5rem;
+ font-weight: 900;
+ color: rgba(255, 255, 255, 0.15);
+ }
 
-        .card-tag {
-            color: var(--signal-green);
-            font-size: 0.8rem;
-            font-weight: bold;
-            text-transform: uppercase;
-            margin-bottom: 10px;
-            display: block;
-        }
+ .card-tag {
+ color: var(--signal-green);
+ font-size: 0.8rem;
+ font-weight: bold;
+ text-transform: uppercase;
+ margin-bottom: 10px;
+ display: block;
+ }
 
-        .grid-card h3 {
-            font-size: 1.4rem;
-            margin-bottom: 15px;
-            font-weight: 700;
-            border-bottom: 1px solid var(--grid-line);
-            padding-bottom: 10px;
-        }
+ .grid-card h3 {
+ font-size: 1.4rem;
+ margin-bottom: 15px;
+ font-weight: 700;
+ border-bottom: 1px solid var(--grid-line);
+ padding-bottom: 10px;
+ }
 
-        .grid-card p {
-            color: var(--text-secondary);
-            font-size: 0.95rem;
-            margin-bottom: 15px;
-        }
+ .grid-card p {
+ color: var(--text-secondary);
+ font-size: 0.95rem;
+ margin-bottom: 15px;
+ }
 
-        /* Detailed Table Section */
-        .table-section {
-            margin-bottom: 80px;
-        }
+ /* Detailed Table Section */
+ .table-section {
+ margin-bottom: 80px;
+ }
 
-        .data-table-wrapper {
-            overflow-x: auto;
-            border: 3px solid var(--border-color);
-        }
+ .data-table-wrapper {
+ overflow-x: auto;
+ border: 3px solid var(--border-color);
+ }
 
-        .data-table {
-            width: 100%;
-            border-collapse: collapse;
-            text-align: left;
-            font-size: 0.95rem;
-        }
+ .data-table {
+ width: 100%;
+ border-collapse: collapse;
+ text-align: left;
+ font-size: 0.95rem;
+ }
 
-        .data-table th, .data-table td {
-            padding: 15px 20px;
-            border: 1px solid var(--grid-line);
-        }
+ .data-table th, .data-table td {
+ padding: 15px 20px;
+ border: 1px solid var(--grid-line);
+ }
 
-        .data-table th {
-            background-color: #15161c;
-            text-transform: uppercase;
-            font-weight: bold;
-            border-bottom: 3px solid var(--border-color);
-        }
+ .data-table th {
+ background-color: #15161c;
+ text-transform: uppercase;
+ font-weight: bold;
+ border-bottom: 3px solid var(--border-color);
+ }
 
-        .data-table tr:nth-child(even) {
-            background-color: rgba(255, 255, 255, 0.02);
-        }
+ .data-table tr:nth-child(even) {
+ background-color: rgba(255, 255, 255, 0.02);
+ }
 
-        .data-table td .status-badge {
-            display: inline-block;
-            padding: 2px 8px;
-            font-size: 0.75rem;
-            font-weight: bold;
-            text-transform: uppercase;
-        }
+ .data-table td .status-badge {
+ display: inline-block;
+ padding: 2px 8px;
+ font-size: 0.75rem;
+ font-weight: bold;
+ text-transform: uppercase;
+ }
 
-        .status-badge.active {
-            background-color: rgba(0, 255, 102, 0.2);
-            color: var(--signal-green);
-            border: 1px solid var(--signal-green);
-        }
+ .status-badge.active {
+ background-color: rgba(0, 255, 102, 0.2);
+ color: var(--signal-green);
+ border: 1px solid var(--signal-green);
+ }
 
-        /* FAQ Accordion Section */
-        .faq-section {
-            margin-bottom: 80px;
-        }
+ /* FAQ Accordion Section */
+ .faq-section {
+ margin-bottom: 80px;
+ }
 
-        .faq-container {
-            display: grid;
-            gap: 20px;
-        }
+ .faq-container {
+ display: grid;
+ gap: 20px;
+ }
 
-        .faq-item {
-            border: 2px solid var(--border-color);
-            background: var(--surface-color);
-        }
+ .faq-item {
+ border: 2px solid var(--border-color);
+ background: var(--surface-color);
+ }
 
-        .faq-question {
-            padding: 20px;
-            font-weight: bold;
-            font-size: 1.1rem;
-            border-bottom: 1px solid var(--grid-line);
-            display: flex;
-            align-items: center;
-            gap: 15px;
-        }
+ .faq-question {
+ padding: 20px;
+ font-weight: bold;
+ font-size: 1.1rem;
+ border-bottom: 1px solid var(--grid-line);
+ display: flex;
+ align-items: center;
+ gap: 15px;
+ }
 
-        .faq-question::before {
-            content: "Q";
-            color: var(--signal-red);
-            font-weight: 900;
-            font-size: 1.3rem;
-        }
+ .faq-question::before {
+ content: "Q";
+ color: var(--signal-red);
+ font-weight: 900;
+ font-size: 1.3rem;
+ }
 
-        .faq-answer {
-            padding: 20px;
-            color: var(--text-secondary);
-            font-size: 0.95rem;
-            line-height: 1.7;
-        }
+ .faq-answer {
+ padding: 20px;
+ color: var(--text-secondary);
+ font-size: 0.95rem;
+ line-height: 1.7;
+ }
 
-        /* Call To Action Box */
-        .cta-box {
-            border: 4px dashed var(--signal-yellow);
-            padding: 40px;
-            background: rgba(255, 234, 0, 0.03);
-            text-align: center;
-            margin-bottom: 80px;
-        }
+ /* Call To Action Box */
+ .cta-box {
+ border: 4px dashed var(--signal-yellow);
+ padding: 40px;
+ background: rgba(255, 234, 0, 0.03);
+ text-align: center;
+ margin-bottom: 80px;
+ }
 
-        .cta-box h3 {
-            font-size: 1.8rem;
-            margin-bottom: 15px;
-            color: var(--signal-yellow);
-        }
+ .cta-box h3 {
+ font-size: 1.8rem;
+ margin-bottom: 15px;
+ color: var(--signal-yellow);
+ }
 
-        .cta-box p {
-            max-width: 700px;
-            margin: 0 auto 25px auto;
-            color: var(--text-secondary);
-        }
+ .cta-box p {
+ max-width: 700px;
+ margin: 0 auto 25px auto;
+ color: var(--text-secondary);
+ }
 
-        .cta-btn {
-            display: inline-block;
-            padding: 15px 35px;
-            background-color: var(--signal-yellow);
-            color: #000;
-            text-decoration: none;
-            font-weight: 900;
-            text-transform: uppercase;
-            border: 2px solid #000;
-            transition: all 0.2s ease;
-        }
+ .cta-btn {
+ display: inline-block;
+ padding: 15px 35px;
+ background-color: var(--signal-yellow);
+ color: #000;
+ text-decoration: none;
+ font-weight: 900;
+ text-transform: uppercase;
+ border: 2px solid #000;
+ transition: all 0.2s ease;
+ }
 
-        .cta-btn:hover {
-            background-color: transparent;
-            color: var(--signal-yellow);
-            border-color: var(--signal-yellow);
-        }
+ .cta-btn:hover {
+ background-color: transparent;
+ color: var(--signal-yellow);
+ border-color: var(--signal-yellow);
+ }
 
-        /* Footer */
-        .v-foot-m8pz {
-            background-color: #000000;
-            border-top: 4px solid var(--border-color);
-            padding: 60px 20px;
-            color: var(--text-secondary);
-            font-size: 0.85rem;
-        }
+ /* Footer */
+ .v-foot-m8pz {
+ background-color: #000000;
+ border-top: 4px solid var(--border-color);
+ padding: 60px 20px;
+ color: var(--text-secondary);
+ font-size: 0.85rem;
+ }
 
-        .v-foot-inner {
-            max-width: 1200px;
-            margin: 0 auto;
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 40px;
-        }
+ .v-foot-inner {
+ max-width: 1200px;
+ margin: 0 auto;
+ display: grid;
+ grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+ gap: 40px;
+ }
 
-        .v-foot-col h4 {
-            color: var(--text-primary);
-            font-size: 1rem;
-            text-transform: uppercase;
-            margin-bottom: 20px;
-            border-left: 3px solid var(--signal-red);
-            padding-left: 10px;
-        }
+ .v-foot-col h4 {
+ color: var(--text-primary);
+ font-size: 1rem;
+ text-transform: uppercase;
+ margin-bottom: 20px;
+ border-left: 3px solid var(--signal-red);
+ padding-left: 10px;
+ }
 
-        .v-foot-col p {
-            margin-bottom: 10px;
-            line-height: 1.5;
-        }
+ .v-foot-col p {
+ margin-bottom: 10px;
+ line-height: 1.5;
+ }
 
-        .v-foot-bottom {
-            max-width: 1200px;
-            margin: 40px auto 0 auto;
-            padding-top: 20px;
-            border-top: 1px solid var(--grid-line);
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            flex-wrap: wrap;
-            gap: 20px;
-        }
+ .v-foot-bottom {
+ max-width: 1200px;
+ margin: 40px auto 0 auto;
+ padding-top: 20px;
+ border-top: 1px solid var(--grid-line);
+ display: flex;
+ justify-content: space-between;
+ align-items: center;
+ flex-wrap: wrap;
+ gap: 20px;
+ }
 
-        @media (max-width: 768px) {
-            .nav-links {
-                display: none; /* responsive-768 pattern simplifies mobile nav */
-            }
-            .x-grid-ni9g {
-                grid-template-columns: 1fr;
-            }
-            .section-header {
-                flex-direction: column;
-                align-items: flex-start;
-                gap: 10px;
-            }
-        }
-    </style>
+ @media (max-width: 768px) {
+ .nav-links {
+ display: none; /* responsive-768 pattern simplifies mobile nav */
+ }
+ .x-grid-ni9g {
+ grid-template-columns: 1fr;
+ }
+ .section-header {
+ flex-direction: column;
+ align-items: flex-start;
+ gap: 10px;
+ }
+ }
+ </style>
   <meta name="twitter:card" content="summary">
 </head>
 <body>
 
-    <!-- Navigation Header -->
-    <nav>
-        <div class="nav-container">
-            <a href="https://blog.nonhyeonnight.xyz/" class="nav-logo">GD-SIGNAL</a>
-            <div class="nav-links">
-                <a href="https://blog.nonhyeonnight.xyz/">홈</a>
-                <a href="#transit-map">교통 허브 분석</a>
-                <a href="#criteria">선택 기준</a>
-                <a href="#faq">질문과 답변</a>
-            </div>
-        </div>
-    </nav>
+ <!-- Navigation Header -->
+ <nav>
+ <div class="nav-container">
+ <a href="https://blog.nonhyeonnight.xyz/" class="nav-logo">GD-SIGNAL</a>
+ <div class="nav-links">
+ <a href="https://blog.nonhyeonnight.xyz/">홈</a>
+ <a href="#transit-map">교통 허브 분석</a>
+ <a href="#criteria">선택 기준</a>
+ <a href="#faq">질문과 답변</a>
+ </div>
+ </div>
+ </nav>
 
-    <!-- Hero Section -->
-    <header class="v-hero-jg77">
-        <div class="v-hero-inner">
-            <div class="v-hero-badge">TRANSIT METAPHOR / MAPO AREA</div>
-            <h1>공덕 클럽 추천정보<span>야간 교통망 관점의 분석</span></h1>
-            <p class="v-hero-desc">
-                공덕은 단순한 환승역이 아닌, 서울 서부권 야간 흐름의 중심 교차로입니다. 본 분석은 물리적 접근성, 공간 구조, 그리고 소리 전달 시스템의 설계 표준을 기준으로 공덕 지역의 클럽 인프라를 체계적으로 해부합니다.
-            </p>
-        </div>
-    </header>
+ <!-- Hero Section -->
+ <header class="v-hero-jg77">
+ <div class="v-hero-inner">
+ <div class="v-hero-badge">TRANSIT METAPHOR / MAPO AREA</div>
+ <h1>공덕 클럽 추천정보<span>야간 교통망 관점의 분석</span></h1>
+ <p class="v-hero-desc">
+ 공덕은 단순한 환승역이 아닌, 서울 서부권 야간 흐름의 중심 교차로입니다. 본 분석은 물리적 접근성, 공간 구조, 그리고 소리 전달 시스템의 설계 표준을 기준으로 공덕 지역의 클럽 인프라를 체계적으로 해부합니다.
+ </p>
+ </div>
+ </header>
 
-    <!-- Main Content -->
-    <main class="r-main-ra3l">
+ <!-- Main Content -->
+ <main class="r-main-ra3l">
 
-        <!-- Section 1: Transit Map Metaphor Grid -->
-        <section id="transit-map" style="margin-bottom: 80px;">
-            <div class="section-header">
-                <h2>야간 이동망 분석 (Night Transit Nodes)</h2>
-                <span class="signal-dot"></span>
-            </div>
-            
-            <div class="x-grid-ni9g">
-                <!-- Node 1 -->
-                <div class="grid-card">
-                    <span class="card-num">01</span>
-                    <span class="card-tag">Line 5 / 6 Access</span>
-                    <h3>다중 노선 연계성</h3>
-                    <p>공덕 오거리 중심 반경 500m 이내의 공간 구조는 심야 시간대 귀가 동선과 직결됩니다. 합정, 홍대, 이태원, 을지로를 잇는 축선으로서 최적의 지리적 허브 역할을 검증합니다.</p>
-                </div>
+ <!-- Section 1: Transit Map Metaphor Grid -->
+ <section id="transit-map" style="margin-bottom: 80px;">
+ <div class="section-header">
+ <h2>야간 이동망 분석 (Night Transit Nodes)</h2>
+ <span class="signal-dot"></span>
+ </div>
+ 
+ <div class="x-grid-ni9g">
+ <!-- Node 1 -->
+ <div class="grid-card">
+ <span class="card-num">01</span>
+ <span class="card-tag">Line 5 / 6 Access</span>
+ <h3>다중 노선 연계성</h3>
+ <p>공덕 오거리 중심 반경 500m 이내의 공간 구조는 심야 시간대 귀가 동선과 직결됩니다. 합정, 홍대, 이태원, 을지로를 잇는 축선으로서 최적의 지리적 허브 역할을 검증합니다.</p>
+ </div>
 
-                <!-- Node 2 -->
-                <div class="grid-card">
-                    <span class="card-num">02</span>
-                    <span class="card-tag">Acoustic System</span>
-                    <h3>음향 주파수 분산 구조</h3>
-                    <p>지하 공간의 특수성을 고려한 저음역대(Sub-bass) 제어 설계와 고밀도 흡음재 마감 상태를 정량 평가하여 소리의 명료도와 묵직한 울림의 균형을 분석합니다.</p>
-                </div>
+ <!-- Node 2 -->
+ <div class="grid-card">
+ <span class="card-num">02</span>
+ <span class="card-tag">Acoustic System</span>
+ <h3>음향 주파수 분산 구조</h3>
+ <p>지하 공간의 특수성을 고려한 저음역대(Sub-bass) 제어 설계와 고밀도 흡음재 마감 상태를 정량 평가하여 소리의 명료도와 묵직한 울림의 균형을 분석합니다.</p>
+ </div>
 
-                <!-- Node 3 -->
-                <div class="grid-card">
-                    <span class="card-num">03</span>
-                    <span class="card-tag">Traffic Flow</span>
-                    <h3>입/퇴장 동선 분리</h3>
-                    <p>혼잡 시간대인 01:00~03:00 사이의 병목 현상을 최소화하기 위한 진입로 및 비상 대피 동선 설계를 체계적으로 파악하여 내부 안전 등급을 제시합니다.</p>
-                </div>
-            </div>
-        </section>
+ <!-- Node 3 -->
+ <div class="grid-card">
+ <span class="card-num">03</span>
+ <span class="card-tag">Traffic Flow</span>
+ <h3>입/퇴장 동선 분리</h3>
+ <p>혼잡 시간대인 01:00~03:00 사이의 병목 현상을 최소화하기 위한 진입로 및 비상 대피 동선 설계를 체계적으로 파악하여 내부 안전 등급을 제시합니다.</p>
+ </div>
+ </div>
+ </section>
 
-        <!-- Section 2: Detailed Selection Protocol -->
-        <section id="criteria" class="table-section">
-            <div class="section-header">
-                <h2>조건별 클럽 분석 표준 (Evaluation Matrix)</h2>
-                <span class="signal-dot" style="background-color: var(--signal-green);"></span>
-            </div>
+ <!-- Section 2: Detailed Selection Protocol -->
+ <section id="criteria" class="table-section">
+ <div class="section-header">
+ <h2>조건별 클럽 분석 표준 (Evaluation Matrix)</h2>
+ <span class="signal-dot" style="background-color: var(--signal-green);"></span>
+ </div>
 
-            <div class="data-table-wrapper">
-                <table class="data-table">
-                    <thead>
-                        <tr>
-                            <th>분석 차원 (Dimension)</th>
-                            <th>핵심 검증 요소 (Verification)</th>
-                            <th>적합성 기준 (Standard)</th>
-                            <th>상태 (Status)</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td><strong>음향 설비 (Acoustics)</strong></td>
-                            <td>18인치 서브우퍼 배열 및 서라운드 딜레이 정렬</td>
-                            <td>주파수 편차 ±3dB 이내 안정성 유지</td>
-                            <td><span class="status-badge active">적합</span></td>
-                        </tr>
-                        <tr>
-                            <td><strong>공간 레이아웃</strong></td>
-                            <td>메인 플로어와 라운지 구역의 물리적 격리도</td>
-                            <td>구역 간 소음 간섭 15dB 이상 감쇄</td>
-                            <td><span class="status-badge active">적합</span></td>
-                        </tr>
-                        <tr>
-                            <td><strong>보안 인프라</strong></td>
-                            <td>CCTV 사각지대 최소화 및 비상구 조도 확보</td>
-                            <td>비상 대피로 가시성 100% 확보</td>
-                            <td><span class="status-badge active">검증완료</span></td>
-                        </tr>
-                        <tr>
-                            <td><strong>교통 편의성</strong></td>
-                            <td>심야 버스 노선 및 택시 승하차 구역 접근성</td>
-                            <td>출구 도보 5분 이내 인접 조건 충족</td>
-                            <td><span class="status-badge active">적합</span></td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
-        </section>
+ <div class="data-table-wrapper">
+ <table class="data-table">
+ <thead>
+ <tr>
+ <th>분석 차원 (Dimension)</th>
+ <th>핵심 검증 요소 (Verification)</th>
+ <th>적합성 기준 (Standard)</th>
+ <th>상태 (Status)</th>
+ </tr>
+ </thead>
+ <tbody>
+ <tr>
+ <td><strong>음향 설비 (Acoustics)</strong></td>
+ <td>18인치 서브우퍼 배열 및 서라운드 딜레이 정렬</td>
+ <td>주파수 편차 ±3dB 이내 안정성 유지</td>
+ <td><span class="status-badge active">적합</span></td>
+ </tr>
+ <tr>
+ <td><strong>공간 레이아웃</strong></td>
+ <td>메인 플로어와 라운지 구역의 물리적 격리도</td>
+ <td>구역 간 소음 간섭 15dB 이상 감쇄</td>
+ <td><span class="status-badge active">적합</span></td>
+ </tr>
+ <tr>
+ <td><strong>보안 인프라</strong></td>
+ <td>CCTV 사각지대 최소화 및 비상구 조도 확보</td>
+ <td>비상 대피로 가시성 100% 확보</td>
+ <td><span class="status-badge active">검증완료</span></td>
+ </tr>
+ <tr>
+ <td><strong>교통 편의성</strong></td>
+ <td>심야 버스 노선 및 택시 승하차 구역 접근성</td>
+ <td>출구 도보 5분 이내 인접 조건 충족</td>
+ <td><span class="status-badge active">적합</span></td>
+ </tr>
+ </tbody>
+ </table>
+ </div>
+ </section>
 
-        <!-- Section 3: FAQ Section -->
-        <section id="faq" class="faq-section">
-            <div class="section-header">
-                <h2>자주 묻는 질문 (FAQ Protocol)</h2>
-                <span class="signal-dot" style="background-color: var(--signal-red);"></span>
-            </div>
+ <!-- Section 3: FAQ Section -->
+ <section id="faq" class="faq-section">
+ <div class="section-header">
+ <h2>자주 묻는 질문 (FAQ Protocol)</h2>
+ <span class="signal-dot" style="background-color: var(--signal-red);"></span>
+ </div>
 
-            <div class="faq-container">
-                <div class="faq-item">
-                    <div class="faq-question">공덕 지역 클럽 선택 시 가장 최우선으로 고려해야 할 교통 요소는 무엇인가요?</div>
-                    <div class="faq-answer">
-                        공덕역은 4개 노선이 교차하는 허브이므로, 막차 시간 이후 심야 버스(N버스) 노선과의 연계성을 확인하는 것이 중요합니다. 특히 마포대로변의 전용차로 정류장과의 도보 거리가 5분 이내인지 여부가 복귀 동선의 편의성을 결정합니다.
-                    </div>
-                </div>
+ <div class="faq-container">
+ <div class="faq-item">
+ <div class="faq-question">공덕 지역 클럽 선택 시 가장 최우선으로 고려해야 할 교통 요소는 무엇인가요?</div>
+ <div class="faq-answer">
+ 공덕역은 4개 노선이 교차하는 허브이므로, 막차 시간 이후 심야 버스(N버스) 노선과의 연계성을 확인하는 것이 중요합니다. 특히 마포대로변의 전용차로 정류장과의 도보 거리가 5분 이내인지 여부가 복귀 동선의 편의성을 결정합니다.
+ </div>
+ </div>
 
-                <div class="faq-item">
-                    <div class="faq-question">지하층 구조를 가진 클럽의 환기 설비 기준은 어떻게 되나요?</div>
-                    <div class="faq-answer">
-                        밀폐형 지하 공간은 시간당 최소 6회 이상의 공기 순환(Air Change per Hour)이 이루어져야 쾌적한 내부 환경이 유지됩니다. 분석 시 공조 시스템의 급배기구 위치 및 가동 소음 수준을 필히 체크하고 있습니다.
-                    </div>
-                </div>
+ <div class="faq-item">
+ <div class="faq-question">지하층 구조를 가진 클럽의 환기 설비 기준은 어떻게 되나요?</div>
+ <div class="faq-answer">
+ 밀폐형 지하 공간은 시간당 최소 6회 이상의 공기 순환(Air Change per Hour)이 이루어져야 쾌적한 내부 환경이 유지됩니다. 분석 시 공조 시스템의 급배기구 위치 및 가동 소음 수준을 필히 체크하고 있습니다.
+ </div>
+ </div>
 
-                <div class="faq-item">
-                    <div class="faq-question">입장 제한 요건(드레스코드 등)은 사전에 정의되어 있습니까?</div>
-                    <div class="faq-answer">
-                        각 공간의 콘셉트에 따라 슬리퍼, 트레이닝 하의 등의 입장을 제한하는 자체 규정을 적용하는 경우가 많습니다. 방문 전 해당 공간의 공식 가이드라인을 확인하는 것이 불필요한 대기 시간을 줄이는 방법입니다.
-                    </div>
-                </div>
-            </div>
-        </section>
+ <div class="faq-item">
+ <div class="faq-question">입장 제한 요건(드레스코드 등)은 사전에 정의되어 있습니까?</div>
+ <div class="faq-answer">
+ 각 공간의 콘셉트에 따라 슬리퍼, 트레이닝 하의 등의 입장을 제한하는 자체 규정을 적용하는 경우가 많습니다. 방문 전 해당 공간의 공식 가이드라인을 확인하는 것이 불필요한 대기 시간을 줄이는 방법입니다.
+ </div>
+ </div>
+ </div>
+ </section>
 
-        <!-- Action Callout Box -->
-        <div class="cta-box">
-            <h3>데이터 기반의 완벽한 야간 동선 구축</h3>
-            <p>공덕 지역의 공간 설계 정보와 교통 네트워크 분석을 통해 불필요한 이동 시간을 줄이고 최상의 사운드 이펙트를 체계적으로 경험하십시오.</p>
-            <a href="https://blog.nonhyeonnight.xyz/" class="cta-btn">인프라 전체 지도 보기</a>
-        </div>
+ <!-- Action Callout Box -->
+ <div class="cta-box">
+ <h3>데이터 기반의 완벽한 야간 동선 구축</h3>
+ <p>공덕 지역의 공간 설계 정보와 교통 네트워크 분석을 통해 불필요한 이동 시간을 줄이고 최상의 사운드 이펙트를 체계적으로 경험하십시오.</p>
+ <a href="https://blog.nonhyeonnight.xyz/" class="cta-btn">인프라 전체 지도 보기</a>
+ </div>
 
-    </main>
+ </main>
 
-    <!-- Footer -->
-    <footer class="v-foot-m8pz">
-        <div class="v-foot-inner">
-            <div class="v-foot-col">
-                <h4>ABOUT GD-SIGNAL</h4>
-                <p>공덕 지역을 중심으로 서울 서부권 야간 상권 및 클럽 문화 공간의 기술적, 공간적 인프라 분석 정보를 전문적으로 다루는 아카이브 포털입니다.</p>
-            </div>
-            <div class="v-foot-col">
-                <h4>DATA STANDARDS</h4>
-                <p>음향 주파수 시뮬레이션, 동선 효율성 지표, 소방 안전 기준 준수 여부를 필터링하여 검증된 신호만을 제공합니다.</p>
-            </div>
-            <div class="v-foot-col">
-                <h4>LEGAL DISCLAIMER</h4>
-                <p>본 플랫폼에서 제공하는 모든 지표 및 분석 결과는 공개된 공간 데이터 및 건축물 분석 자료를 토대로 작성되었으며 개별 방문 경험에 따라 실제와 차이가 있을 수 있습니다.</p>
-            </div>
-        </div>
-        <div class="v-foot-bottom">
-            <p>&copy; 2024 GD-SIGNAL. All Rights Reserved. Powered by Brutalist-Avantgarde System.</p>
-            <p>Theme: KR-NIGHT-SIGNAL v1.2</p>
-        </div>
-    </footer>
+ <!-- Footer -->
+ <footer class="v-foot-m8pz">
+ <div class="v-foot-inner">
+ <div class="v-foot-col">
+ <h4>ABOUT GD-SIGNAL</h4>
+ <p>공덕 지역을 중심으로 서울 서부권 야간 상권 및 클럽 문화 공간의 기술적, 공간적 인프라 분석 정보를 전문적으로 다루는 아카이브 포털입니다.</p>
+ </div>
+ <div class="v-foot-col">
+ <h4>DATA STANDARDS</h4>
+ <p>음향 주파수 시뮬레이션, 동선 효율성 지표, 소방 안전 기준 준수 여부를 필터링하여 검증된 신호만을 제공합니다.</p>
+ </div>
+ <div class="v-foot-col">
+ <h4>LEGAL DISCLAIMER</h4>
+ <p>본 플랫폼에서 제공하는 모든 지표 및 분석 결과는 공개된 공간 데이터 및 건축물 분석 자료를 토대로 작성되었으며 개별 방문 경험에 따라 실제와 차이가 있을 수 있습니다.</p>
+ </div>
+ </div>
+ <div class="v-foot-bottom">
+ <p>&copy; 2024 GD-SIGNAL. All Rights Reserved. Powered by Brutalist-Avantgarde System.</p>
+ <p>Theme: KR-NIGHT-SIGNAL v1.2</p>
+ </div>
+ </footer>
 
 </body>
 </html>

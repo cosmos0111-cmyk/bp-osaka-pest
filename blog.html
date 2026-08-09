@@ -1,309 +1,307 @@
 <!DOCTYPE html>
 <html lang="ko">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="bpaas-design-system" content="brutalist-avantgarde">
-    <meta name="bpaas-design-theme" content="kr-neon-void">
-    
-    <!-- SEO & Meta -->
-    <title> 블로그 | 공덕 클럽 추천정보 및 데이터 분석 - 오사카 펄스트</title>
-    <meta name="description" content="공덕역 및 만리동 일대 고정밀도 클럽 추천정보. 오사카 펄스트의 데이터 기반 공간 분석 및 마포구 유흥업소 운영 가이드. 현재 reservations 및 멤버십 문의 필수.">
-    <meta name="keywords" content="공덕 클럽, 공덕 클럽 추천, 오사카 펄스트, 마포구 유흥, 서교동 나이트, 공덕역 주점, VIP 라운지, CLUB SEOUL">
-    <link rel="canonical" href="https://blog.nonhyeonnight.xyz/blog.html">
+ <meta charset="UTF-8">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ 
+ <!-- SEO & Meta -->
+ <title> 블로그 | 공덕 클럽 추천정보 및 데이터 분석 - 오사카 펄스트</title>
+ <meta name="description" content="공덕역 및 만리동 일대 고정밀도 클럽 추천정보. 오사카 펄스트의 데이터 기반 공간 분석 및 마포구 유흥업소 운영 가이드. 현재 reservations 및 멤버십 문의 필수.">
+ <meta name="keywords" content="공덕 클럽, 공덕 클럽 추천, 오사카 펄스트, 마포구 유흥, 서교동 나이트, 공덕역 주점, VIP 라운지, CLUB SEOUL">
+ <link rel="canonical" href="https://blog.nonhyeonnight.xyz/blog.html">
 
-    <!-- Open Graph / Twitter -->
-    <meta property="og:type" content="article">
-    <meta property="og:url" content="https://blog.nonhyeonnight.xyz/blog.html">
-    <meta property="og:title" content="블로그 | 공덕 클럽 추천정보 및 데이터 분석 - 오사카 펄스트">
-    <meta property="og:description" content="공덕역 및 만리동 일대 고정밀도 클럽 추천정보. 오사카 펄스트의 데이터 기반 공간 분석 및 마포구 유흥업소 운영 가이드. 현재 reservations 및 멤버십 문의 필수.">
-    <meta property="og:image" content="https://osaka-pest.pages.dev/assets/og-image.jpg">
-    <meta property="og:site_name" content="오사카 펄스트">
-    <meta name="twitter:card" content="summary">
+ <!-- Open Graph / Twitter -->
+ <meta property="og:type" content="article">
+ <meta property="og:url" content="https://blog.nonhyeonnight.xyz/blog.html">
+ <meta property="og:title" content="블로그 | 공덕 클럽 추천정보 및 데이터 분석 - 오사카 펄스트">
+ <meta property="og:description" content="공덕역 및 만리동 일대 고정밀도 클럽 추천정보. 오사카 펄스트의 데이터 기반 공간 분석 및 마포구 유흥업소 운영 가이드. 현재 reservations 및 멤버십 문의 필수.">
+ <meta property="og:image" content="https://osaka-pest.pages.dev/assets/og-image.jpg">
+ <meta property="og:site_name" content="오사카 펄스트">
+ <meta name="twitter:card" content="summary">
 
-    <style>
-        :root {
-            --color-bg: #050505;
-            --color-text: #f0f0f0;
-            --color-accent: #ff003c; /* Cyber Red */
-            --color-accent-sec: #00f3ff; /* Cyber Blue */
-            --color-border: #333333;
-            --font-main: 'Courier New', Courier, monospace;
-            --font-display: 'Arial Black', sans-serif;
-            --spacing-unit: 1.5rem;
-        }
+ <style>
+ :root {
+ --color-bg: #050505;
+ --color-text: #f0f0f0;
+ --color-accent: #ff003c; /* Cyber Red */
+ --color-accent-sec: #00f3ff; /* Cyber Blue */
+ --color-border: #333333;
+ --font-main: 'Courier New', Courier, monospace;
+ --font-display: 'Arial Black', sans-serif;
+ --spacing-unit: 1.5rem;
+ }
 
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-        }
+ * {
+ box-sizing: border-box;
+ margin: 0;
+ padding: 0;
+ }
 
-        body {
-            background-color: var(--color-bg);
-            color: var(--color-text);
-            font-family: var(--font-main);
-            line-height: 1.6;
-            overflow-x: hidden;
-            border: 1px solid var(--color-border);
-            min-height: 100vh;
-        }
+ body {
+ background-color: var(--color-bg);
+ color: var(--color-text);
+ font-family: var(--font-main);
+ line-height: 1.6;
+ overflow-x: hidden;
+ border: 1px solid var(--color-border);
+ min-height: 100vh;
+ }
 
-        /* Layout Grid */
-        .grid-container {
-            display: grid;
-            grid-template-columns: 1fr;
-            gap: 0;
-        }
+ /* Layout Grid */
+ .grid-container {
+ display: grid;
+ grid-template-columns: 1fr;
+ gap: 0;
+ }
 
-        @media (min-width: 768px) {
-            .grid-container {
-                grid-template-columns: 250px 1fr;
-            }
-        }
+ @media (min-width: 768px) {
+ .grid-container {
+ grid-template-columns: 250px 1fr;
+ }
+ }
 
-        /* Navigation */
-        nav {
-            border-right: 1px solid var(--color-border);
-            padding: var(--spacing-unit);
-            position: fixed;
-            height: 100vh;
-            width: 250px;
-            background: var(--color-bg);
-            z-index: 100;
-        }
+ /* Navigation */
+ nav {
+ border-right: 1px solid var(--color-border);
+ padding: var(--spacing-unit);
+ position: fixed;
+ height: 100vh;
+ width: 250px;
+ background: var(--color-bg);
+ z-index: 100;
+ }
 
-        .nav-logo {
-            font-family: var(--font-display);
-            font-size: 1.5rem;
-            color: var(--color-accent);
-            text-transform: uppercase;
-            margin-bottom: 2rem;
-            letter-spacing: -1px;
-            display: block;
-        }
+ .nav-logo {
+ font-family: var(--font-display);
+ font-size: 1.5rem;
+ color: var(--color-accent);
+ text-transform: uppercase;
+ margin-bottom: 2rem;
+ letter-spacing: -1px;
+ display: block;
+ }
 
-        .nav-links {
-            list-style: none;
-        }
+ .nav-links {
+ list-style: none;
+ }
 
-        .nav-links li {
-            margin-bottom: 1rem;
-        }
+ .nav-links li {
+ margin-bottom: 1rem;
+ }
 
-        .nav-links a {
-            color: var(--color-text);
-            text-decoration: none;
-            text-transform: uppercase;
-            font-weight: bold;
-            font-size: 0.9rem;
-            transition: color 0.3s;
-            display: block;
-            padding: 5px 0;
-            border-bottom: 1px solid transparent;
-        }
+ .nav-links a {
+ color: var(--color-text);
+ text-decoration: none;
+ text-transform: uppercase;
+ font-weight: bold;
+ font-size: 0.9rem;
+ transition: color 0.3s;
+ display: block;
+ padding: 5px 0;
+ border-bottom: 1px solid transparent;
+ }
 
-        .nav-links a:hover {
-            color: var(--color-accent-sec);
-            border-bottom: 1px solid var(--color-accent-sec);
-        }
+ .nav-links a:hover {
+ color: var(--color-accent-sec);
+ border-bottom: 1px solid var(--color-accent-sec);
+ }
 
-        /* Main Content */
-        main {
-            padding: var(--spacing-unit);
-            margin-left: 0;
-        }
+ /* Main Content */
+ main {
+ padding: var(--spacing-unit);
+ margin-left: 0;
+ }
 
-        @media (min-width: 768px) {
-            main {
-                margin-left: 250px;
-                padding: 4rem;
-                border-left: 1px solid var(--color-border);
-            }
-        }
+ @media (min-width: 768px) {
+ main {
+ margin-left: 250px;
+ padding: 4rem;
+ border-left: 1px solid var(--color-border);
+ }
+ }
 
-        /* Typography & Components */
-        h1 {
-            font-family: var(--font-display);
-            font-size: 3rem;
-            text-transform: uppercase;
-            margin-bottom: 1rem;
-            line-height: 1.1;
-        }
+ /* Typography & Components */
+ h1 {
+ font-family: var(--font-display);
+ font-size: 3rem;
+ text-transform: uppercase;
+ margin-bottom: 1rem;
+ line-height: 1.1;
+ }
 
-        h2 {
-            font-family: var(--font-display);
-            font-size: 1.8rem;
-            margin-top: 3rem;
-            margin-bottom: 1rem;
-            border-bottom: 2px solid var(--color-accent);
-            display: inline-block;
-            padding-right: 1rem;
-        }
+ h2 {
+ font-family: var(--font-display);
+ font-size: 1.8rem;
+ margin-top: 3rem;
+ margin-bottom: 1rem;
+ border-bottom: 2px solid var(--color-accent);
+ display: inline-block;
+ padding-right: 1rem;
+ }
 
-        p {
-            margin-bottom: 1.5rem;
-            font-size: 1rem;
-            text-align: justify;
-        }
+ p {
+ margin-bottom: 1.5rem;
+ font-size: 1rem;
+ text-align: justify;
+ }
 
-        .meta-tag {
-            display: inline-block;
-            background: var(--color-accent);
-            color: #000;
-            padding: 0.2rem 0.5rem;
-            font-weight: bold;
-            font-size: 0.8rem;
-            margin-bottom: 1rem;
-            text-transform: uppercase;
-        }
+ .meta-tag {
+ display: inline-block;
+ background: var(--color-accent);
+ color: #000;
+ padding: 0.2rem 0.5rem;
+ font-weight: bold;
+ font-size: 0.8rem;
+ margin-bottom: 1rem;
+ text-transform: uppercase;
+ }
 
-        .data-box {
-            border: 1px solid var(--color-border);
-            padding: 1.5rem;
-            margin: 2rem 0;
-            background: #0a0a0a;
-        }
+ .data-box {
+ border: 1px solid var(--color-border);
+ padding: 1.5rem;
+ margin: 2rem 0;
+ background: #0a0a0a;
+ }
 
-        .data-box dt {
-            color: var(--color-accent-sec);
-            font-weight: bold;
-            margin-top: 1rem;
-        }
-        .data-box dd {
-            margin-left: 0;
-            margin-bottom: 0.5rem;
-        }
+ .data-box dt {
+ color: var(--color-accent-sec);
+ font-weight: bold;
+ margin-top: 1rem;
+ }
+ .data-box dd {
+ margin-left: 0;
+ margin-bottom: 0.5rem;
+ }
 
-        ul.brutalist-list {
-            list-style: none;
-        }
+ ul.brutalist-list {
+ list-style: none;
+ }
 
-        ul.brutalist-list li::before {
-            content: "> ";
-            color: var(--color-accent);
-        }
+ ul.brutalist-list li::before {
+ content: "> ";
+ color: var(--color-accent);
+ }
 
-        ul.brutalist-list li {
-            margin-bottom: 0.5rem;
-            padding-left: 0.5rem;
-        }
+ ul.brutalist-list li {
+ margin-bottom: 0.5rem;
+ padding-left: 0.5rem;
+ }
 
-        .cta-section {
-            margin-top: 4rem;
-            padding: 2rem;
-            border: 2px solid var(--color-text);
-            text-align: center;
-        }
+ .cta-section {
+ margin-top: 4rem;
+ padding: 2rem;
+ border: 2px solid var(--color-text);
+ text-align: center;
+ }
 
-        .btn {
-            display: inline-block;
-            background: var(--color-text);
-            color: var(--color-bg);
-            padding: 1rem 2rem;
-            text-decoration: none;
-            font-weight: bold;
-            text-transform: uppercase;
-            margin-top: 1rem;
-            transition: all 0.3s;
-        }
+ .btn {
+ display: inline-block;
+ background: var(--color-text);
+ color: var(--color-bg);
+ padding: 1rem 2rem;
+ text-decoration: none;
+ font-weight: bold;
+ text-transform: uppercase;
+ margin-top: 1rem;
+ transition: all 0.3s;
+ }
 
-        .btn:hover {
-            background: var(--color-accent);
-            color: #fff;
-        }
+ .btn:hover {
+ background: var(--color-accent);
+ color: #fff;
+ }
 
-        /* Noise Overlay */
-        .noise {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100vw;
-            height: 100vh;
-            pointer-events: none;
-            z-index: 9999;
-            opacity: 0.05;
-            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
-        }
-    </style>
+ /* Noise Overlay */
+ .noise {
+ position: fixed;
+ top: 0;
+ left: 0;
+ width: 100vw;
+ height: 100vh;
+ pointer-events: none;
+ z-index: 9999;
+ opacity: 0.05;
+ background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+ }
+ </style>
 </head>
 <body>
 
-    <div class="noise"></div>
+ <div class="noise"></div>
 
-    <div class="grid-container">
-        <nav>
-            <div class="nav-logo">OSAKA PEST</div>
-            <ul class="nav-links">
-                <li><a href="/">Home</a></li>
-                <li><a href="/about">Analysis</a></li>
-                <li><a href="/services">Services</a></li>
-                <li><a href="/contact">Reservations</a></li>
-                <li><a href="/blog" style="color: var(--color-accent);">Blog</a></li>
-            </ul>
-        </nav>
+ <div class="grid-container">
+ <nav>
+ <div class="nav-logo">OSAKA PEST</div>
+ <ul class="nav-links">
+ <li><a href="/">Home</a></li>
+ <li><a href="/about">Analysis</a></li>
+ <li><a href="/services">Services</a></li>
+ <li><a href="/contact">Reservations</a></li>
+ <li><a href="/blog" style="color: var(--color-accent);">Blog</a></li>
+ </ul>
+ </nav>
 
-        <main>
-            <span class="meta-tag">Sector: Gongdeok / Manri-dong</span>
-            <span class="meta-tag" style="background: var(--color-accent-sec);">Type: Data Log</span>
-            <h1>공덕 클럽 추천정보: 데이터 기반 입지 분석</h1>
-            
-            <p><strong>발행일:</strong> 2024.10.24 | <strong>저자:</strong> Osaka Pest Data Team</p>
-            <p>본 문서는 마포구 공덕역 및 만리동 일대의 나이트라이프 생태계를 분석하고, 특정 업소의 추천 여부를 결정하는 객관적 지표를 제시합니다. 주관적 감상이 아닌, 유동 인구, 음향 설비, 보안 프로토콜에 기반한 공덕 클럽 추천정보를 제공합니다.</p>
+ <main>
+ <span class="meta-tag">Sector: Gongdeok / Manri-dong</span>
+ <span class="meta-tag" style="background: var(--color-accent-sec);">Type: Data Log</span>
+ <h1>공덕 클럽 추천정보: 데이터 기반 입지 분석</h1>
+ 
+ <p><strong>발행일:</strong> 2024.10.24 | <strong>저자:</strong> Osaka Pest Data Team</p>
+ <p>본 문서는 마포구 공덕역 및 만리동 일대의 나이트라이프 생태계를 분석하고, 특정 업소의 추천 여부를 결정하는 객관적 지표를 제시합니다. 주관적 감상이 아닌, 유동 인구, 음향 설비, 보안 프로토콜에 기반한 공덕 클럽 추천정보를 제공합니다.</p>
 
-            <hr style="border: 0; border-top: 1px solid var(--color-border); margin: 2rem 0;">
+ <hr style="border: 0; border-top: 1px solid var(--color-border); margin: 2rem 0;">
 
-            <h2>01. 구역별 특성 분석 (Zone Analysis)</h2>
-            <p>공덕역 일대는 서교동 및 홍대 인근의 유흥 문화가 확장되면서 형성된 2 차 나이트 존입니다. 오사카 펄스트의 관측 데이터에 따르면, 해당 지역은 다음과 같은 세분화된 특성을 가집니다.</p>
-            
-            <div class="data-box">
-                <dl>
-                    <dt>Zone A: 공덕역 4 번 출구 직결권</dt>
-                    <dd>고밀도 주점 및 소규모 클럽 밀집. 접근성이 용이하나, 공간적 제약으로 인한 음향 왜곡 및 혼잡도가 높음. 대중적 소비 패턴.</dd>
-                    
-                    <dt>Zone B: 만리동 고가 하부 및 이면 도로</dt>
-                    <dd>재개발 지역 특유의 유휴 공간 활용. 대형 클럽 및 프라이빗 라운지 입지. 차음 설비가 우수하며, VIP 고객 위주의 닫힌 소비 구조 형성.</dd>
-                </dl>
-            </div>
+ <h2>01. 구역별 특성 분석 (Zone Analysis)</h2>
+ <p>공덕역 일대는 서교동 및 홍대 인근의 유흥 문화가 확장되면서 형성된 2 차 나이트 존입니다. 오사카 펄스트의 관측 데이터에 따르면, 해당 지역은 다음과 같은 세분화된 특성을 가집니다.</p>
+ 
+ <div class="data-box">
+ <dl>
+ <dt>Zone A: 공덕역 4 번 출구 직결권</dt>
+ <dd>고밀도 주점 및 소규모 클럽 밀집. 접근성이 용이하나, 공간적 제약으로 인한 음향 왜곡 및 혼잡도가 높음. 대중적 소비 패턴.</dd>
+ 
+ <dt>Zone B: 만리동 고가 하부 및 이면 도로</dt>
+ <dd>재개발 지역 특유의 유휴 공간 활용. 대형 클럽 및 프라이빗 라운지 입지. 차음 설비가 우수하며, VIP 고객 위주의 닫힌 소비 구조 형성.</dd>
+ </dl>
+ </div>
 
-            <h2>02. 추천 기준 및 필터링 (Selection Criteria)</h2>
-            <p>단순한 '분위기'라는 모호한 개념을 배제하고, 다음과 같은 하드웨어 및 소프트웨어 지표를 통해 공덕 클럽 추천정보를 선별합니다.</p>
-            <ul class="brutalist-list">
-                <li><strong>음향 시스템 (Sound System):</strong> Funktion-One 또는 L-Acoustics 등 프로페셔널 라인 어레이 보유 여부.</li>
-                <li><strong>보안 프로토콜 (Security):</strong> entrances screening, CCTV coverage, and private security personnel ratio.</li>
-                <li><strong>유동성 (Liquidity):</strong> 주중/주말 평균 체류 시간 및 1 인당 평균 지출액 (ARPU) 데이터.</li>
-                <li><strong>접근성 (Access):</strong> 차량 진입로 및 발레 파킹 서비스 가용성.</li>
-            </ul>
+ <h2>02. 추천 기준 및 필터링 (Selection Criteria)</h2>
+ <p>단순한 '분위기'라는 모호한 개념을 배제하고, 다음과 같은 하드웨어 및 소프트웨어 지표를 통해 공덕 클럽 추천정보를 선별합니다.</p>
+ <ul class="brutalist-list">
+ <li><strong>음향 시스템 (Sound System):</strong> Funktion-One 또는 L-Acoustics 등 프로페셔널 라인 어레이 보유 여부.</li>
+ <li><strong>보안 프로토콜 (Security):</strong> entrances screening, CCTV coverage, and private security personnel ratio.</li>
+ <li><strong>유동성 (Liquidity):</strong> 주중/주말 평균 체류 시간 및 1 인당 평균 지출액 (ARPU) 데이터.</li>
+ <li><strong>접근성 (Access):</strong> 차량 진입로 및 발레 파킹 서비스 가용성.</li>
+ </ul>
 
-            <h2>03. 주요 시설 데이터 로그 (Facility Log)</h2>
-            <p>현재 운영 중인 주요 시설에 대한 기술적 스펙 및 운영 현황을 기록합니다. 특정 시설명은 보안상의 이유로 코드네임으로 대체될 수 있습니다.</p>
+ <h2>03. 주요 시설 데이터 로그 (Facility Log)</h2>
+ <p>현재 운영 중인 주요 시설에 대한 기술적 스펙 및 운영 현황을 기록합니다. 특정 시설명은 보안상의 이유로 코드네임으로 대체될 수 있습니다.</p>
 
-            <div class="data-box">
-                <h3>Facility Code: GD-09 (만리동 소재)</h3>
-                <p>지하 2 층 구조. 메인 댄스 플로어 면적 120 평방미터. 저주파 서브우퍼 8 기 배치로 인한 물리적 진동감 우수. 출입 통제 시스템 엄격. 예약제 운영 필수.</p>
-            </div>
+ <div class="data-box">
+ <h3>Facility Code: GD-09 (만리동 소재)</h3>
+ <p>지하 2 층 구조. 메인 댄스 플로어 면적 120 평방미터. 저주파 서브우퍼 8 기 배치로 인한 물리적 진동감 우수. 출입 통제 시스템 엄격. 예약제 운영 필수.</p>
+ </div>
 
-            <div class="data-box">
-                <h3>Facility Code: GD-12 (공덕동 소재)</h3>
-                <p>복합 문화 공간 형태. 1 층 라운지 및 2 층 클럽 구역 분리 운영. 조명 시스템 DMX512 프로토콜 지원. 상대적으로 개방적인 분위기이나, 심야 시간대 보안 강화.</p>
-            </div>
+ <div class="data-box">
+ <h3>Facility Code: GD-12 (공덕동 소재)</h3>
+ <p>복합 문화 공간 형태. 1 층 라운지 및 2 층 클럽 구역 분리 운영. 조명 시스템 DMX512 프로토콜 지원. 상대적으로 개방적인 분위기이나, 심야 시간대 보안 강화.</p>
+ </div>
 
-            <h2>04. 결론 및 제언 (Conclusion)</h2>
-            <p>공덕역 일대는 기존 홍대권의 소음 민원 및 규제 강화로 인해 기능을 대체할 수 있는 전략적 요충지입니다. 고품질의 사운드와 프라이버시를 보장받는 공간을 원한다면 Zone B(만리동) 내의 시설을 우선적으로 고려해야 합니다.</p>
-            <p>본 분석은 오사카 펄스트의 내부 데이터베이스를 기반으로 하며, 현장 상황에 따라 변동될 수 있습니다.</p>
+ <h2>04. 결론 및 제언 (Conclusion)</h2>
+ <p>공덕역 일대는 기존 홍대권의 소음 민원 및 규제 강화로 인해 기능을 대체할 수 있는 전략적 요충지입니다. 고품질의 사운드와 프라이버시를 보장받는 공간을 원한다면 Zone B(만리동) 내의 시설을 우선적으로 고려해야 합니다.</p>
+ <p>본 분석은 오사카 펄스트의 내부 데이터베이스를 기반으로 하며, 현장 상황에 따라 변동될 수 있습니다.</p>
 
-            <div class="cta-section">
-                <h3>MEMBERSHIP & RESERVATION</h3>
-                <p>검증된 멤버십 및 VIP 라운지 예약은 직접 문의를 통해서만 가능합니다.</p>
-                <a href="/contact" class="btn">접속 요청 (Request Access)</a>
-            </div>
+ <div class="cta-section">
+ <h3>MEMBERSHIP & RESERVATION</h3>
+ <p>검증된 멤버십 및 VIP 라운지 예약은 직접 문의를 통해서만 가능합니다.</p>
+ <a href="/contact" class="btn">접속 요청 (Request Access)</a>
+ </div>
 
-            <footer style="margin-top: 4rem; border-top: 1px solid var(--color-border); padding-top: 2rem; font-size: 0.8rem; color: #666;">
-                <p>&copy; 2024 OSAKA PEST. All Rights Reserved.</p>
-                <p>Seoul, Mapo-gu, Gongdeok-dong. Data Driven Nightlife Analysis.</p>
-            </footer>
-        </main>
-    </div>
+ <footer style="margin-top: 4rem; border-top: 1px solid var(--color-border); padding-top: 2rem; font-size: 0.8rem; color: #666;">
+ <p>&copy; 2024 OSAKA PEST. All Rights Reserved.</p>
+ <p>Seoul, Mapo-gu, Gongdeok-dong. Data Driven Nightlife Analysis.</p>
+ </footer>
+ </main>
+ </div>
 
 </body>
 </html>
