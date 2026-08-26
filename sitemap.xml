@@ -16,47 +16,12 @@
     <priority>1.0</priority>
   </url>
   <url>
-    <loc>https://blog.nonhyeonnight.xyz/posts/checklist-003-1sugx1a.html</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://blog.nonhyeonnight.xyz/posts/compare-001-1h6zo4h.html</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://blog.nonhyeonnight.xyz/posts/compare-001-1sn336e.html</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://blog.nonhyeonnight.xyz/posts/compare-002-1qjt68d.html</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://blog.nonhyeonnight.xyz/posts/compare-002-1s0wu34.html</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
     <loc>https://blog.nonhyeonnight.xyz/posts/compare-003-1pom3dl.html</loc>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://blog.nonhyeonnight.xyz/posts/field_note-002-nvaqme.html</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
     <loc>https://blog.nonhyeonnight.xyz/posts/gemini-coverage-20260705-114.html</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://blog.nonhyeonnight.xyz/posts/gemini-coverage-20260705-1250.html</loc>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
   </url>
@@ -86,107 +51,7 @@
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://blog.nonhyeonnight.xyz/posts/gemini-coverage-20260721-0263.html</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
     <loc>https://blog.nonhyeonnight.xyz/posts/gemini-coverage-20260721-0264.html</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://blog.nonhyeonnight.xyz/posts/gemini-coverage-20260721-0265.html</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://blog.nonhyeonnight.xyz/posts/gemini-coverage-20260721-0266.html</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://blog.nonhyeonnight.xyz/posts/gemini-coverage-20260721-0267.html</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://blog.nonhyeonnight.xyz/posts/gemini-coverage-20260721-0268.html</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://blog.nonhyeonnight.xyz/posts/gemini-coverage-20260721-0269.html</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://blog.nonhyeonnight.xyz/posts/gemini-coverage-20260721-0270.html</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://blog.nonhyeonnight.xyz/posts/gemini-coverage-20260721-0271.html</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://blog.nonhyeonnight.xyz/posts/gemini-coverage-20260721-0272.html</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://blog.nonhyeonnight.xyz/posts/gemini-coverage-20260721-0273.html</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://blog.nonhyeonnight.xyz/posts/gemini-coverage-20260721-0274.html</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://blog.nonhyeonnight.xyz/posts/gemini-coverage-20260721-0275.html</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://blog.nonhyeonnight.xyz/posts/gemini-coverage-20260721-0276.html</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://blog.nonhyeonnight.xyz/posts/gemini-coverage-20260721-0277.html</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://blog.nonhyeonnight.xyz/posts/gemini-coverage-20260721-0278.html</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://blog.nonhyeonnight.xyz/posts/gemini-coverage-20260721-0279.html</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://blog.nonhyeonnight.xyz/posts/gemini-coverage-20260721-0280.html</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://blog.nonhyeonnight.xyz/posts/gemini-coverage-20260721-0281.html</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://blog.nonhyeonnight.xyz/posts/gemini-coverage-20260721-0282.html</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://blog.nonhyeonnight.xyz/posts/gemini-coverage-20260731-0050.html</loc>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
   </url>
@@ -196,52 +61,12 @@
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://blog.nonhyeonnight.xyz/posts/guide-003.html</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://blog.nonhyeonnight.xyz/posts/qa-001-1pe69vk.html</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
     <loc>https://blog.nonhyeonnight.xyz/posts/qa-001-1s0wu34.html</loc>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://blog.nonhyeonnight.xyz/posts/qa-002-i2uw99.html</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://blog.nonhyeonnight.xyz/posts/review-001-nvaqme.html</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://blog.nonhyeonnight.xyz/posts/review-001.html</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://blog.nonhyeonnight.xyz/posts/review-002.html</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
     <loc>https://blog.nonhyeonnight.xyz/posts.html</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://blog.nonhyeonnight.xyz/posts-2.html</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://blog.nonhyeonnight.xyz/posts-3.html</loc>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
   </url>
